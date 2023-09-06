@@ -1,9 +1,12 @@
-function Header() {
-    return (<header className="App-header">
+import IconComponent from './Icon';
+
+export default function Header() {
+    return (
+        <header className="App-header">
         <p>
           WELCOME TO MY FIRST REACT APPLICATION
         </p>
-    </header>);
+        <IconComponent />
+        </header>
+    );
 }
-
-export default Header;
