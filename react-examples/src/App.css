@@ -15,3 +15,15 @@
   color: rgb(212, 223, 237);
   margin-left: 50px;
 }
+
+.car-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cars to wrap to the next row when the container is too narrow */
+  justify-content: space-between; /* Adjust as needed for spacing between cars */
+}
+
+.car-item {
+  flex: 0 0 calc(33.333% - 10px); /* Adjust the width as needed (3 cars per row in this example) */
+  margin: 5px; /* Adjust the margin between cars as needed */
+  text-align: center; /* Center the content within each car item */
+}
