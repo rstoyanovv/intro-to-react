@@ -5,16 +5,11 @@ import car3 from '../assets/car_model3.png';
 import car4 from '../assets/car_model4.png';
 import car5 from '../assets/car_model5.png';
 import car6 from '../assets/car_model6.png';
+import { Header, Text } from './Text.js';
 
-function PictureOfCar({image}) {
+function PictureOfCar ({image}) {
     return (
         <img src={image} alt="Car" />
-    );
-}
-
-function Header() {
-    return (
-        <h1 className="header">Gallery with Cars</h1>
     );
 }
 
@@ -29,6 +24,7 @@ export default function Gallery() {
                     <PictureOfCar key={index} image={image} />
                 ))}
             </div>
+            <Text />
         </section>
     );
 }
