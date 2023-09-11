@@ -16,12 +16,14 @@
   padding-top: 20px;
   margin-top: 0;
   margin-left: 50px;
+  margin-right: 50px;
   text-align: center;
 }
 
 .text {
   color: rgb(212, 223, 237);
   margin-left: 50px;
+  margin-right: 50px;
   padding-bottom: 30px;
 }
 
@@ -39,15 +41,22 @@
 }
 
 .description-section {
-  background-color: #354158;
-  padding-top: 40px;
+  background-color: #4e5565;
   padding-bottom: 40px;
 }
 
 .detail {
   margin-left: 50px;
+  margin-right: 50px;
 }
 
 #name-of-car {
   color: rgb(212, 223, 237);
+}
+
+#description-heading {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
