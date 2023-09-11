@@ -5,8 +5,8 @@ import car3 from '../assets/car_model3.png';
 import car4 from '../assets/car_model4.png';
 import car5 from '../assets/car_model5.png';
 import car6 from '../assets/car_model6.png';
-import { PictureOfCar } from './Picture.js';
-import { Name } from './Name.js';
+import { PictureOfCar } from './carElement/PictureOfCar.js';
+import { Name } from './carElement/Name.js';
 
 export default function Gallery() {
     const carImages = [car1, car2, car3, car4, car5, car6];
