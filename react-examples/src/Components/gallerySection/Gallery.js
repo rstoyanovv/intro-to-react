@@ -1,10 +1,10 @@
 import React from 'react';
-import car1 from '../assets/car_model1.png';
-import car2 from '../assets/car_model2.png';
-import car3 from '../assets/car_model3.png';
-import car4 from '../assets/car_model4.png';
-import car5 from '../assets/car_model5.png';
-import car6 from '../assets/car_model6.png';
+import car1 from '../../assets/car_model1.png';
+import car2 from '../../assets/car_model2.png';
+import car3 from '../../assets/car_model3.png';
+import car4 from '../../assets/car_model4.png';
+import car5 from '../../assets/car_model5.png';
+import car6 from '../../assets/car_model6.png';
 import { PictureOfCar } from './carElement/PictureOfCar.js';
 import { Name } from './carElement/Name.js';
 

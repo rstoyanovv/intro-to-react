@@ -1,5 +1,5 @@
 import './App.css';
-import Gallery from './Components/Gallery'; 
+import Gallery from './Components/gallerySection/Gallery'; 
 import { Header, Text } from './Components/Text';
 import { EmptySpace } from './Components/EmptySpace';
 import { Footer } from './Components/Footer';
