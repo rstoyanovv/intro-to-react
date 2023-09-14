@@ -5,6 +5,7 @@ let nextId = 0;
 export default function List() {
     const [name, setName] = useState('');
     const [list, setList] = useState([]);
+    const [likes, setLikes] = useState(0);
 
     return (
         <>
@@ -17,7 +18,7 @@ export default function List() {
             />
 
             <button
-                onClick={() => {
+                onClick = {() => {
                     setList([
                         ...list,
                         {
@@ -26,7 +27,13 @@ export default function List() {
                         }
                     ]);
                 }}
-            >Add Car Model</button>
+            > Add Car Model </button>
+
+            <button
+                onClick = {() => {
+                    setLikes(likes + 1)
+                }}
+            > Like {likes} </button>
 
             <ul>
                 {list.map(element => (
