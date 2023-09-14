@@ -5,6 +5,8 @@ import { EmptySpace } from './Components/EmptySpace';
 import { Footer } from './Components/Footer';
 import { Descriptions } from './Components/descriptionSection/Description';
 import SentMessage from './Components/SentMessage';
+import Form from './Components/Form';
+import List from './Components/List';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
       <Text />
       <Descriptions />
       <SentMessage />
+      <EmptySpace height={50} />
+      <Form />
+      <List />
       <Footer />
     </div>
   );

@@ -101,3 +101,7 @@ button[type="submit"] {
   color: rgb(212, 223, 237);
   margin-top: 10px;
 }
+
+label, p {
+  color:  rgb(212, 223, 237);
+}
