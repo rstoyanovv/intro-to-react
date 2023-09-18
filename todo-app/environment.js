@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config({path: './.env'});
+dotenv.config({path: '../todo-app/.env'});
 
 export const dbConnection = {
     host: process.env.DB_HOST,

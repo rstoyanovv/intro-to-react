@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import todoRouter from './src/todoRouter.js';
 
-const port = 3000;
+const port = 3001;
 
 const app = express();
 app.use(bodyParser.json());
