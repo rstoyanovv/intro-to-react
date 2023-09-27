@@ -23,9 +23,13 @@ export default function CreateNewTask() {
           setIsSubmitting(false);
         });
     };
+
+    const style = {
+      marginLeft: '20px',
+    };
   
     return (
-      <div className="create-new-task">
+      <div className="create-new-task" style={style}>
         <h1>Create New Task</h1>
         {isSubmitted ? (
           <p>Task created successfully!</p>
@@ -37,7 +41,7 @@ export default function CreateNewTask() {
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
             />
-            <button type="submit" disabled={isSubmitting}>
+            <button id='create-button' type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Creating...' : 'Create Task'}
             </button>
           </form>

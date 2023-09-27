@@ -3,15 +3,20 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TodoList from './components/TodoList';
 import CreateNewTask from './components/CreateNewTask';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="api/get-tasks" element={< TodoList />} />
-        <Route path="api/create-task" element={< CreateNewTask />}  />
-      </Routes>
-    </Router>
+    <>
+      <Navbar />
+      <Router>
+        <Routes>
+          <Route path="/" element={< TodoList />} />
+          <Route path="api/get-tasks" element={< TodoList />} />
+          <Route path="api/create-task" element={< CreateNewTask />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

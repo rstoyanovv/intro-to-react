@@ -33,6 +33,10 @@
     font-size: 16px;
   }
   
+  #create-button {
+    color: white;
+  }
+
   .todo-list {
     list-style-type: none;
     padding: 0;
@@ -50,4 +54,26 @@
   /* Hover effect for todo items */
   .todo-item:hover {
     background-color: #e0e0e0;
+  }
+
+  nav {
+    background-color: #4ea8bc;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+  }
+
+  button {
+    background-color: #2a68a7;
+    margin: 0 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+  }
+
+  a:hover {
+    text-decoration:solid;
   }

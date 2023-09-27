@@ -16,8 +16,12 @@ export default function TodoList() {
             });
     }, []);
 
+    const style = {
+        marginLeft: '20px',
+    }
+
     return (
-        <div className="list-with-tasks">
+        <div className="list-with-tasks" style={style}>
             <h1>Tasks: </h1>
             <ul className="list">
                 {todos.map((todo) => (

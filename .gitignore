@@ -1,3 +1,6 @@
 node_modules/
 
 nextjs-blog/
+
+.env
+
