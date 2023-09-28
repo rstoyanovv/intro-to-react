@@ -3,51 +3,67 @@ import axios from 'axios';
 import '../styles/style.css';
 
 export default function CreateNewTask() {
-    const [newTask, setNewTask] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-  
-      axios
-        .post('/api/create-task', { task: newTask })
-        .then(() => {
-          setIsSubmitted(true);
-          setIsSubmitting(false);
-          setNewTask('');
-        })
-        .catch((error) => {
-          console.error(error);
-          setIsSubmitting(false);
-        });
-    };
+  const [newTask, setNewTask] = useState('');
+  const [newTitle, setNewTitle] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const style = {
-      marginLeft: '20px',
-    };
-  
-    return (
-      <div className="create-new-task" style={style}>
-        <h1>Create New Task</h1>
-        {isSubmitted ? (
-          <p>Task created successfully!</p>
-        ) : (
-          <form onSubmit={handleSubmit}>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    axios
+      .post('/api/create-task', { task: newTask })
+      .then(() => {
+        setIsSubmitted(true);
+        setIsSubmitting(false);
+        setNewTask('');
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsSubmitting(false);
+      });
+  };
+
+  const style = {
+    marginLeft: '40px',
+    marginTop: '30px',
+  };
+
+  return (
+    <div className="create-new-task" style={style}>
+      <h2>Create New Task</h2>
+      {isSubmitted ? (
+        <p>Task created successfully!</p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <div className='form-row'>
+            <p style={{ marginRight: '12px' }}>Enter title of your task</p>
             <input
               type="text"
-              placeholder="Enter task description"
+              placeholder="Enter task title"
+              value={newTitle}
+              onChange={(e) => setNewTitle(e.target.value)}
+            />
+          </div>
+          <div className='form-row'>
+            <p style={{ marginRight: '12px' }}>Enter descirption of your task</p>
+            <input
+              type="text"
+              placeholder="Enter description of task"
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
             />
+          </div>
+          <div className='form-row'>
             <button id='create-button' type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Creating...' : 'Create Task'}
             </button>
-          </form>
-        )}
-      </div>
-    );
-  }
-  
+          </div>
+        </form>
+      )}
+    </div>
+  );
+}
+
 

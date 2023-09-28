@@ -15,6 +15,11 @@
     margin-bottom: 10px;
   }
   
+  .form-row {
+    display: flex;
+    margin: 15px 0px;
+  }
+
   .task-input {
     flex: 1;
     padding: 5px;
@@ -35,6 +40,8 @@
   
   #create-button {
     color: white;
+    margin-top: 10px;
+    margin-left: 0px;
   }
 
   .todo-list {
