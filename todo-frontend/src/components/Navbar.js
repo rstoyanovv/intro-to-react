@@ -12,7 +12,7 @@ export default function Navbar() {
 
     return (
         <nav>
-            <a href='/api/create-task'>
+            <a href='/'>
                 <h3>Simple To-Do application</h3>
             </a>
             <button style={styleOfButton}>

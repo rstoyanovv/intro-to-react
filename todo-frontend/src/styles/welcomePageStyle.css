@@ -1,0 +1,30 @@
+.welcome-container {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.welcome-header {
+    margin: 80px;
+}
+
+.welcome-main {
+    margin: 30px;
+}
+
+.welcome-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.start-button {
+    height: 8vh;
+    width: 20vw;
+    margin-top: 5vh;
+    border-radius: 30px;
+}
