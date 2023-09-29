@@ -13,7 +13,7 @@ export default function CreateNewTask() {
     setIsSubmitting(true);
 
     axios
-      .post('/api/create-task', { task: newTask })
+      .post('/api/create-task', { title: newTitle, task: newTask})
       .then(() => {
         setIsSubmitted(true);
         setIsSubmitting(false);

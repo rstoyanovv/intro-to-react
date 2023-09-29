@@ -25,7 +25,7 @@ export default function TodoList() {
             <h1>Tasks: </h1>
             <ul className="list">
                 {todos.map((todo) => (
-                    <li key={todo.id} className="todo-item">{todo.task}</li>
+                    <li key={todo.id} className="todo-item">Title: {todo.title}  --- Task:{todo.task}</li>
                 ))}
             </ul>
         </div>
