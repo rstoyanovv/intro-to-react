@@ -36,23 +36,27 @@ export default function CreateNewTask() {
       {isSubmitted ? (
         <p>Task created successfully!</p>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form style={{ width: '40vw' }} onSubmit={handleSubmit}>
           <div className='form-row'>
-            <p style={{ marginRight: '12px' }}>Enter title of your task</p>
+            <p className='paragraph' style={{ marginRight: '12px' }}>Enter title of your task</p>
             <input
               type="text"
               placeholder="Enter task title"
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
+              className='input-text'
+              required
             />
           </div>
           <div className='form-row'>
-            <p style={{ marginRight: '12px' }}>Enter descirption of your task</p>
+            <p className='paragraph' style={{ marginRight: '12px' }}>Enter descirption of your task</p>
             <input
               type="text"
               placeholder="Enter description of task"
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
+              className='input-text'
+              required
             />
           </div>
           <div className='form-row'>

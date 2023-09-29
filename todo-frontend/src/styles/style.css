@@ -17,7 +17,17 @@
   
   .form-row {
     display: flex;
+    align-items: center;
     margin: 15px 0px;
+  }
+
+  .paragraph {
+    flex: 1;
+  }
+
+  .input-text {
+    margin-left: 20px;
+    border-radius: 5px;
   }
 
   .task-input {
