@@ -95,3 +95,7 @@
   a:hover {
     text-decoration:solid;
   }
+
+  .single-item {
+    margin-bottom: 20px;
+  }
