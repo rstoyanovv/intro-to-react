@@ -11,7 +11,8 @@ export default function SingleCollapseSection({ task }) {
     const titleStyle = {
         textDecoration: 'none',
         color: 'rgb(97, 122, 190)',
-        fontSize: '1 rem'
+        fontSize: '1 rem',
+        cursor: 'pointer'
     }
 
     return (
@@ -42,9 +43,7 @@ export default function SingleCollapseSection({ task }) {
                 </div>
             </div>
 
-            <div
-                className={`collapse ${isCollapsed ? '' : 'show'}`}
-            >
+            <div className={`collapse ${isCollapsed ? '' : 'show'}`} >
                 <div className="card-body">
                     {task.task}
                 </div>

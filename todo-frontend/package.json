@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^8.2.1"
+    "concurrently": "^8.2.1",
+    "sass": "^1.68.0"
   }
 }

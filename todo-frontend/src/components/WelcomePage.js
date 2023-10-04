@@ -2,7 +2,6 @@ import '../styles/welcomePageStyle.css';
 
 export default function WelcomePage() {
     const styleOfATag = {
-        //display: 'block',
         textDecoration: 'none',
         padding: '20px 20px',
         fontSize: '2vh',

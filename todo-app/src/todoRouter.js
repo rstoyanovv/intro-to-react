@@ -6,7 +6,12 @@ const router = express.Router();
 router.get ('/get-tasks', async (req, res) => {
     try {
         const result = await pool.query('SELECT title, task FROM todos WHERE status = \'CREATED\'');
-        res.status(200).json(result.rows);
+        const todaysTasks = await pool.query('SELECT title FROM todos WHERE date_of_creating = CURRENT_DATE');
+        const response = {
+            tasks: result.rows,
+            todaysTasks: todaysTasks.rows
+        }
+        res.status(200).json(response);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: err });
