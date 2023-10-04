@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SingleCollapseSection from './SingleCollapseSection';
 import '../styles/style.css';
+import '../styles/todoPageStyle.css';
 
 export default function TodoList() {
     const [todos, setTodos] = useState([]);
