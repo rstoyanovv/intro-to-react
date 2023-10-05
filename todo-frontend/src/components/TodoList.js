@@ -40,7 +40,7 @@ export default function TodoList() {
                             ))}
                         </div>
                         <div className="d-flex justify-content-between" style={{marginTop: '1.2rem'}}>
-                            <input class="btn btn-primary" type="submit" value="Submit"></input>
+                            <button class="btn btn-primary" type="submit" value="Submit"> Complete tasks</button>
                         </div>
                     </div>
                 </div>

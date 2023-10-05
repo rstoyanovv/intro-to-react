@@ -28,6 +28,7 @@ export default function SingleCollapseSection({ task }) {
                     </button>
                 </h5>
                 <div className="form-check">
+                    {/* Add Bootstap icons for checking here */}
                     <input
                         className="form-check-input"
                         type="checkbox"
