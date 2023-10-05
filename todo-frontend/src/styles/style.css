@@ -100,7 +100,10 @@
     margin-bottom: 20px;
   }
 
-.collapse .card-body {
-  background-color: #f0f0f0; 
-  padding: 10px; 
+.welcome-footer {
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }

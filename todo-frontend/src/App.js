@@ -5,6 +5,7 @@ import TodoList from './components/TodoList';
 import CreateNewTask from './components/CreateNewTask';
 import Navbar from './components/Navbar';
 import WelcomePage from './components/WelcomePage';
+//import Footer from './components/Footer';
 
 function App() {
   return (

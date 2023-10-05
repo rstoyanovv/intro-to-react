@@ -32,7 +32,7 @@ export default function CreateNewTask() {
 
   return (
     <div className="create-new-task" style={style}>
-      <h2>Create New Task</h2>
+      <h2 style={{fontWeight: 'bold', marginBottom: '1.5rem'}}>Create New Task</h2>
       {isSubmitted ? (<p>Task created successfully!</p>) : (
         <form style={{ width: '40vw' }} onSubmit={handleSubmit}>
           <div className='form-row'>
