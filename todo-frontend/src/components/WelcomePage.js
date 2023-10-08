@@ -5,6 +5,14 @@ import Footer from './Footer';
 export default function WelcomePage() {
     //Add Toasts with todays tasks
 
+    const styleOfATag = {
+        textDecoration: 'none',
+        color: 'black',
+        fontWeight: '900',
+        marginBottom: '1rem',
+        fontSize: 'xx-large'
+    }
+
     return (
         <>
             <div className="container-fluid" style={{ height: '85vh' }}>
@@ -20,13 +28,13 @@ export default function WelcomePage() {
                     </div>
 
                     <div className="col-md-6 d-flex justify-content-center align-items-center">
-                        <div style={{ textAlign: 'center' }}>
+                        <div style={{ textAlign: 'center', fontFamily: 'sans-serif'}}>
                             <div className="first-heading-section">
-                                <h2 style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Welcome to Task Mate</h2>
+                                <a href="/api/create-task" style={styleOfATag}>Welcome to Task Mate</a>
                                 <h4>Your daily to-do organizer</h4>
                             </div>
                             <div className="second-heading-section">
-                                <h2 style={{ fontWeight: 'bold', marginBottom: '0.8rem' }}>Get started</h2>
+                                <h2 style={{ fontWeight: '600', marginBottom: '0.8rem', fontSize: 'xx-large' }}>Get started</h2>
                                 <h6>Here you can create tasks, set deadlines and be organized</h6>
                             </div>
                         </div>
