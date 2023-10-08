@@ -2,7 +2,7 @@ import { useState } from "react";
 import '../styles/todoPageStyle.css';
 
 export default function SingleCollapseSection({ task }) {
-    const [isCollapsed, setIsCollapsed] = useState(true);
+    const [isCollapsed, setIsCollapsed] = useState(true);  
 
     const toggleCollapse = () => {
         setIsCollapsed(!isCollapsed);
@@ -28,19 +28,7 @@ export default function SingleCollapseSection({ task }) {
                     </button>
                 </h5>
                 <div className="form-check">
-                    {/* Add Bootstap icons for checking here */}
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id={`flexCheck${task.id}`}
-                    />
-                    <label
-                        className="form-check-label"
-                        htmlFor={`flexCheck${task.id}`}
-                    >
-                        Completed
-                    </label>
+                    <button type="button" class="btn btn-danger center-text">Delete</button>
                 </div>
             </div>
 

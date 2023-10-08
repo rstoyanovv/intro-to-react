@@ -23,31 +23,26 @@ export default function TodoList() {
             });
     }, []);
 
-    const h3Style = {
-        marginBottom: '1rem',
-        fontWeight: 'bold',
-    };
-
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="col-md-6 ps-5">
                     <div className="container mt-4 mb-4">
-                        <h3 style={h3Style}>Your tasks</h3>
+                        <h3 className='task-header'>Your tasks</h3>
                         <div id="accordion">
                             {todos.map((task) => (
-                                <SingleCollapseSection key={task.id} task={task} />
+                                <SingleCollapseSection
+                                    key={task.id}
+                                    task={task}
+                                />
                             ))}
-                        </div>
-                        <div className="d-flex justify-content-between" style={{marginTop: '1.2rem'}}>
-                            <button class="btn btn-primary" type="submit" value="Submit"> Complete tasks</button>
                         </div>
                     </div>
                 </div>
 
                 <div className="col-md-6">
                     <div className="container mt-4 mb-4">
-                        <h3 style={h3Style}>Your schedule for today</h3>
+                        <h3 className="task-header">Your schedule for today</h3>
                         <h5 style={{ marginBottom: '1rem' }}> You have to do </h5>
                         <div id="schedule">
                             <ul className="list-group">
