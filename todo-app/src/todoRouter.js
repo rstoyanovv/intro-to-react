@@ -21,11 +21,10 @@ router.get('/get-tasks', async (req, res) => {
 router.post('/create-task', async (req, res) => {
     const title = req.body.title;
     const task = req.body.task;
-
     try {
         const result = await pool.query
-            ('INSERT INTO todos (title, task, status, is_completed) VALUES ($1, $2, $3, $4)',
-                [title, task, 'CREATED', 'FALSE']);
+            ('INSERT INTO todos (title, task, is_completed) VALUES ($1, $2, $3)',
+                [title, task, 'FALSE']);
         res.status(201).json(result.rows[0]);
     } catch (err) {
         console.error(err);
