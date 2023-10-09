@@ -10,18 +10,25 @@ export default function TodoList() {
     const [todays, setTodays] = useState([]);
 
     useEffect(() => {
-        axios
-            .get('/api/get-tasks')
-            .then((response) => {
+        const fetchTasks = async () => {
+            try {
+                const response = await axios.get('/api/get-tasks');
                 const { tasks, todaysTasks } = response.data;
                 setTodos(tasks);
-                console.log(todaysTasks);
                 setTodays(todaysTasks);
-            })
-            .catch((error) => {
+            } catch (error) {
                 console.error(error);
-            });
+            }
+        };
+        fetchTasks();
     }, []);
+
+    console.log(todos);
+
+    const handleTaskDeleted = (taskId) => {
+        const updatedTodos = todos.filter((task) => task.id !== taskId);
+        setTodos(updatedTodos);
+    };
 
     return (
         <div className="container-fluid">
@@ -34,6 +41,7 @@ export default function TodoList() {
                                 <SingleCollapseSection
                                     key={task.id}
                                     task={task}
+                                    onTaskDeleted={() => handleTaskDeleted(task.id)}
                                 />
                             ))}
                         </div>

@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/get-tasks', async (req, res) => {
     try {
-        const result = await pool.query('SELECT title, task FROM todos WHERE status = \'CREATED\'');
+        const result = await pool.query('SELECT id, title, task FROM todos WHERE status = \'CREATED\'');
         const todaysTasks = await pool.query('SELECT title FROM todos WHERE date_of_creating = CURRENT_DATE');
         const response = {
             tasks: result.rows,
@@ -33,16 +33,18 @@ router.post('/create-task', async (req, res) => {
     }
 });
 
-router.delete('/delete-tasks', async (req, res) => {
-    const { checkedTaskIds } = req.body;
-    console.log(checkedTaskIds);
+router.delete('/delete-task', async (req, res) => {
+    const id = req.query.id;
+    if (!id) {
+        return res.status(400).json({ error: 'Missing id parameter' });
+    }
     try {
-        await pool.query('DELETE FROM todos WHERE id IN ($1)', [checkedTaskIds]);
-        res.status(200).json({ message: 'Checked tasks deleted successfully' });
+        await pool.query('DELETE FROM todos WHERE id = $1', [id]);
+        res.status(200).json({ message: 'Task deleted' });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: err });
-    }  
+    }
 });
 
 export default router;

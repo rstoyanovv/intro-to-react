@@ -1,19 +1,23 @@
 import { useState } from "react";
-import '../styles/todoPageStyle.css';
+import '../styles/todoPageStyle.css';	
+import axios from "axios";
 
-export default function SingleCollapseSection({ task }) {
+export default function SingleCollapseSection({ task, onTaskDeleted }) {
     const [isCollapsed, setIsCollapsed] = useState(true);  
 
     const toggleCollapse = () => {
         setIsCollapsed(!isCollapsed);
     };
 
-    const titleStyle = {
-        textDecoration: 'none',
-        color: 'rgb(97, 122, 190)',
-        fontSize: '1 rem',
-        cursor: 'pointer'
-    }
+    const handleDelete = async () => {
+        try {
+            await axios.delete(`/api/delete-task?id=${task.id}`);
+            onTaskDeleted();
+            console.log('Task deleted successfully.');
+        } catch (error) {
+            console.error('Error deleting task:', error);
+        }
+    };
 
     return (
         <div className="card mb-2">
@@ -22,13 +26,17 @@ export default function SingleCollapseSection({ task }) {
                     <button
                         className={`btn btn-link ${isCollapsed ? 'collapsed' : ''}`}
                         onClick={toggleCollapse}
-                        style={titleStyle}
+                        id="collapsing"
                     >
                         {task.title}
                     </button>
                 </h5>
-                <div className="form-check">
-                    <button type="button" class="btn btn-danger center-text">Delete</button>
+                <div>
+                    <button 
+                        type="button" 
+                        class="btn btn-danger center-text"
+                        onClick={handleDelete}
+                    >Delete</button>
                 </div>
             </div>
 
