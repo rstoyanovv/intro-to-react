@@ -11,9 +11,8 @@ export default function SingleCollapseSection({ task, onTaskDeleted }) {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`/api/delete-task?id=${task.id}`);
+            await axios.put(`/api/delete-task?id=${task.id}`);
             onTaskDeleted();
-            console.log('Task deleted successfully.');
         } catch (error) {
             console.error('Error deleting task:', error);
         }
