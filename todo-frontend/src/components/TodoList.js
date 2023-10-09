@@ -23,8 +23,6 @@ export default function TodoList() {
         fetchTasks();
     }, []);
 
-    console.log(todos);
-
     const handleTaskDeleted = (taskId) => {
         const updatedTodos = todos.filter((task) => task.id !== taskId);
         setTodos(updatedTodos);
@@ -47,7 +45,6 @@ export default function TodoList() {
                         </div>
                     </div>
                 </div>
-
                 <div className="col-md-6">
                     <div className="container mt-4 mb-4">
                         <h3 className="task-header">Your schedule for today</h3>
