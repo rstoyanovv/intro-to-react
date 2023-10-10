@@ -3,6 +3,7 @@ import '../styles/style.css';
 import Footer from './Footer';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Toast } from 'bootstrap';
 
 export default function WelcomePage() {
     const [todayTask, setTodayTask] = useState([]);
@@ -28,7 +29,16 @@ export default function WelcomePage() {
         fontSize: 'xx-large'
     }
 
-    console.log(`Today task: ${todayTask.title}`)
+    console.log(`Today task: ${todayTask.title}`);
+
+    useEffect(() => {
+        if (todayTask) {
+            setTimeout(() => {
+                const toastElement = new Toast(document.querySelector('.toast'));
+                toastElement.show();
+            }, 2000); 
+        }
+    }, [todayTask]);
 
     return (
         <>
@@ -60,17 +70,17 @@ export default function WelcomePage() {
             </div>
             <Footer />
 
-            {/*Here is toasts ->*/}
+            {/*Here is a toast ->*/}
             <div
                 aria-live="polite"
                 aria-atomic="true"
                 class="position-fixed bottom-0 end-0"
                 style={{
                     paddingTop: '23rem', paddingLeft: '23rem', paddingRight: '23rem',
-                    paddingBottom: '10rem'
+                    paddingBottom: '11rem'
                 }}>
                 <div class="toast-container">
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
                         <div class="toast-header">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +95,7 @@ export default function WelcomePage() {
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                         <div class="toast-body">
-                            <p>{todayTask.title}</p>
+                            <p style={{fontWeight: 'bold'}}>{todayTask.title}</p>
                         </div>
                     </div>
                 </div>
