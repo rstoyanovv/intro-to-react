@@ -46,5 +46,14 @@ router.put('/delete-task', async (req, res) => {
     }
 });
 
+router.get('/fetch-last-task', async (req, res) => {
+    try{
+        const task = await pool.query('SELECT title, task FROM todos ORDER BY date_of_creating DESC LIMIT 1');
+        res.status(200).json(task.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: err });
+    }
+});
 
 export default router;

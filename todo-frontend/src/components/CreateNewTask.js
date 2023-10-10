@@ -32,9 +32,14 @@ export default function CreateNewTask() {
 
   return (
     <div className="create-new-task" style={style}>
-      <h2 style={{fontWeight: 'bold', marginBottom: '1.5rem'}}>Create New Task</h2>
-      {isSubmitted ? (<p>Task created successfully!</p>) : (
-        <form style={{ width: '40vw' }} onSubmit={handleSubmit}>
+      <h2 style={{ fontWeight: 'bold', marginBottom: '1.5rem' }}>Create New Task</h2>
+      {isSubmitted ?
+        (<>
+          <p>Task created successfully!</p>
+          <a href="/api/create-task" className="btn btn-primary">Add more tasks</a>
+        </>)
+        :
+        (<form style={{ width: '40vw' }} onSubmit={handleSubmit}>
           <div className='form-row'>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Task</span>
@@ -66,9 +71,7 @@ export default function CreateNewTask() {
             </button>
           </div>
         </form>
-      )}
+        )}
     </div>
   );
 }
-
-

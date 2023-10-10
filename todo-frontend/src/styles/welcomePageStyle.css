@@ -5,3 +5,8 @@
 .first-heading-section {
     margin-bottom: 5rem;
 }
+
+.p-5 {
+    padding: 23rem;
+    padding-bottom: 12rem !important;
+}
