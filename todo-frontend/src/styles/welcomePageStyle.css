@@ -10,3 +10,23 @@
     padding: 23rem;
     padding-bottom: 12rem !important;
 }
+
+.today-task-message {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#welcome-header {
+    text-decoration: none;
+    color: black;
+    font-weight:900;
+    margin-bottom: 1rem;
+    font-size: xx-large;
+}
+
+#welcome-second-header {
+    font-weight: 600; 
+    margin-bottom: 0.8rem;
+    font-size: xx-large;
+}

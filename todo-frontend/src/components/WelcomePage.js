@@ -21,22 +21,12 @@ export default function WelcomePage() {
         fetchLastTask();
     }, []);
 
-    const styleOfATag = {
-        textDecoration: 'none',
-        color: 'black',
-        fontWeight: '900',
-        marginBottom: '1rem',
-        fontSize: 'xx-large'
-    }
-
-    console.log(`Today task: ${todayTask.title}`);
-
     useEffect(() => {
         if (todayTask) {
             setTimeout(() => {
                 const toastElement = new Toast(document.querySelector('.toast'));
                 toastElement.show();
-            }, 2000); 
+            }, 3000);
         }
     }, [todayTask]);
 
@@ -57,11 +47,11 @@ export default function WelcomePage() {
                     <div className="col-md-6 d-flex justify-content-center align-items-center">
                         <div style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>
                             <div className="first-heading-section">
-                                <a href="/api/create-task" style={styleOfATag}>Welcome to Task Mate</a>
+                                <a href="/api/create-task" id="welcome-header">Welcome to Task Mate</a>
                                 <h4>Your daily to-do organizer</h4>
                             </div>
                             <div className="second-heading-section">
-                                <h2 style={{ fontWeight: '600', marginBottom: '0.8rem', fontSize: 'xx-large' }}>Get started</h2>
+                                <h2 id="welcome-second-header">Get started</h2>
                                 <h6>Here you can create tasks, set deadlines and be organized</h6>
                             </div>
                         </div>
@@ -70,17 +60,23 @@ export default function WelcomePage() {
             </div>
             <Footer />
 
-            {/*Here is a toast ->*/}
+            {/*Here is the toast ->*/}
             <div
                 aria-live="polite"
                 aria-atomic="true"
                 class="position-fixed bottom-0 end-0"
                 style={{
-                    paddingTop: '23rem', paddingLeft: '23rem', paddingRight: '23rem',
+                    paddingTop: '0rem', paddingLeft: '23rem', paddingRight: '23rem',
                     paddingBottom: '11rem'
                 }}>
                 <div class="toast-container">
-                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                    <div
+                        class="toast"
+                        role="alert"
+                        aria-live="assertive"
+                        aria-atomic="true"
+                        data-bs-autohide="false"
+                        style={{ backgroundColor: 'darkgrey' }}>
                         <div class="toast-header">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +91,7 @@ export default function WelcomePage() {
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                         <div class="toast-body">
-                            <p style={{fontWeight: 'bold'}}>{todayTask.title}</p>
+                            <a href="/api/get-tasks" className="today-task-message">{todayTask.title}</a>
                         </div>
                     </div>
                 </div>
